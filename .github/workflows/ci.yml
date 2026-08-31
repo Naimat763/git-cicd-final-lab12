@@ -19,5 +19,14 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: install pytest
+        run: pip install pytest
+
+      - name: run tests
+        run: python -m pytest
+
+      - name: Build docker image
+        run: docker build -t git-cicd-final .
+
       - name: run application
         run: python app.py
